@@ -43,6 +43,9 @@ helpMessage ="""By.Nunu.Selfbot
 ✬[Name : 'text']: "Name me"
 ✬[MIC]: "mid"]: "Contact share"
 ✬[Reject]: " invite"]: "Reject invite"
+✬[นับ]
+✬[อ่าน]
+✬[Bc:]
 ✬[Tagall] 
 ✬[Copy @]
 ✬[Backup me] 
@@ -1351,12 +1354,74 @@ def bot(op):
 				except:
 					pass                                 
 #-----------------------------------------------------------
-            elif "#END" in msg.text:
-                try:
-                    import sys
-                    sys.exit()
-                except:
-                    pass
+            elif "Admin add @" in msg.text:
+                if msg.from_ in creator:
+                    print "[Command]Staff add executing"
+                    _name = msg.text.replace("Admin add @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    gs = ki.getGroup(msg.to)
+                    gs = kk.getGroup(msg.to)
+                    gs = kc.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        ki.sendText(msg.to,"Contact not found")
+                    else:
+                        for target in targets:
+                            try:
+                                admin.append(target)
+                                cl.sendText(msg.to,"Admin Ditambahkan")
+                            except:
+                                pass
+                    print "[Command]Staff add executed"
+                else:
+                    cl.sendText(msg.to,"Command denied.")
+                    cl.sendText(msg.to,"Admin permission required.")
+
+            elif "Admin remove @" in msg.text:
+                if msg.from_ in creator:
+                    print "[Command]Staff remove executing"
+                    _name = msg.text.replace("Admin remove @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    gs = ki.getGroup(msg.to)
+                    gs = kk.getGroup(msg.to)
+                    gs = kc.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        ki.sendText(msg.to,"Contact not found")
+                    else:
+                        for target in targets:
+                            try:
+                                admin.remove(target)
+                                cl.sendText(msg.to,"Admin Dihapus")
+                            except:
+                                pass
+                    print "[Command]Staff remove executed"
+                else:
+                    cl.sendText(msg.to,"Command denied.")
+                    cl.sendText(msg.to,"Admin permission required.")
+
+            elif msg.text in ["Adminlist","adminlist"]:
+              if msg.from_ in creator:
+                if admin == []:
+                    cl.sendText(msg.to,"The adminlist is empty")
+                else:
+                    cl.sendText(msg.to,"Tunggu...")
+                    mc = ""
+                    for mi_d in admin:
+                        mc += "->" +cl.getContact(mi_d).displayName + "\n"
+                    cl.sendText(msg.to,mc)
+                    print "[Command]Stafflist executed"
+	
+	
+	
 #-----------------------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
                 ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
@@ -1368,34 +1433,39 @@ def bot(op):
                 kk.sendText(msg.to,"bot 2")
                 ks.sendText(msg.to,"bot 3")		
 #----------------------------------------------------------
-            elif "Backup me" in msg.text:
-		try:
-		    cl.updateDisplayPicture(profile.pictureStatus)
-		    cl.updateProfile(profile)
-		    cl.sendText(msg.to, "Success backup profile")
-		except Exception as e:
-		    cl.sendText(msg.to, str(e))
-#--------------------------------------------------------
-	    elif "Copy " in msg.text:
-                copy0 = msg.text.replace("Copy ","")
-                copy1 = copy0.lstrip()
-                copy2 = copy1.replace("@","")
-                copy3 = copy2.rstrip()
-                _name = copy3
-		group = cl.getGroup(msg.to)
-		for contact in group.members:
-		    cname = cl.getContact(contact.mid).displayName
-		    if cname == _name:
-			cl.CloneContactProfile(contact.mid)
-			cl.sendText(msg.to, "Success~")
-		    else:
-			pass
+            elif msg.text in ["Backup"]:
+                    try:
+                        cl.updateDisplayPicture(backup.pictureStatus)
+                        cl.updateProfile(backup)
+                        cl.sendText(msg.to,"Backup done")
+                    except Exception as e:
+                        cl.sendText(msg.to, str (e))
+                        
+            elif "Copy @" in msg.text:
+                if msg.toType == 2:
+                    print "[Copy]"
+                    _name = msg.text.replace("Copy @","")
+                    _nametarget = _name.rstrip(' ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to, "Not Found")
+                    else:                                                                                                                       
+                        for target in targets:
+                            try:
+                                cl.CloneContactProfile(target)
+                                cl.sendText(msg.to, "Succes")
+                            except Exception as e:
+                                print e
 #--------------------------------------------
             elif "Bc: " in msg.text:
 		bc = msg.text.replace("Bc: ","")
 		gid = cl.getGroupIdsJoined()
 		for i in gid:
-		    cl.sendText(i,"=======[BROADCAST]=======\n\n"+bc+"\n\nContact Me : line.me/ti/p/~@xpk5386g")
+		    cl.sendText(i,"=======[BROADCAST]=======\n\n"+bc+"\n\nContact Me : http://line.me/ti/p/4bvwOIMft8")
 		cl.sendText(msg.to,"Success BC BosQ")
             elif "Add all" in msg.text:
 		thisgroup = cl.getGroups([msg.to])
