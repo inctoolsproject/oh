@@ -29,63 +29,66 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 helpMessage ="""By.Nunu.Selfbot
   
-👻[Id]: ~÷~
-👻[Mid]: ~÷~
-👻[All mid]:
-👻[Me]: ~÷~
-👻[K1/K2/K3/]: "Contact"
-👻[K1/K2/K3 fuck:]: "Kick kicker"
-👻[Group Id]: "Id Me Group"
-👻[TL : "Text"]: "Auto status TL"
-👻[Clock :]: "Name Clock"
-👻[Up clock]: "Up date Clock"
-👻[Name : 'text']: "Name me"
-👻[MIC]: "mid"]: "Contact share"
-👻[Reject]: " invite"]: "Reject invite"
-✬[Tag all] 
+✬[Id]:
+✬[Mid]:
+✬[All mid]:
+✬[Me]:
+✬[K1/K2/K3]: "Join"
+✬[K1/K2/K3/]: "Contact"
+✬[K1/K2/K3 fuck:]: "Kick kicker"
+✬[Group Id]: "Id Me Group"
+✬[TL : "Text"]: "Auto status TL"
+✬[Clock :]: "Name Clock"
+✬[Up clock]: "Up date Clock"
+✬[Name : 'text']: "Name me"
+✬[MIC]: "mid"]: "Contact share"
+✬[Reject]: " invite"]: "Reject invite"
+✬[Tagall] 
 ✬[Copy @]
-✬[Backup me]
-👻[Massage add: "text"]: ~÷~
-👻[Add confirmasi]: ~÷~
-👻[Comment set : "Text"]: ~÷~
-👻[Comment check]: ~÷~
-👻[Clock: on]: "Clock name on"
-👻[Clock: off]: "Clock name off"
-👻[Ban]: "Add blacklist"
-👻[Unban]: "Dalate blacklist"
-👻[Banlist]: "Check blacklist"
-👻[Proteck: on/off]:"ป้องกัน"
-👻[Block url: on/off]:"ป้องกันลิ้ง"
-👻[Namelock: on/off]:"ป้องกันห้อง"
-👻[Blockinvite:on/off]:"ป้องกันการเชิญ"
+✬[Backup me] 
+✬[Add all] 
+✬[Recover] 
+✬[Remove all chat] 
+✬[Massage add: "text"]:
+✬[Add confirmasi]:
+✬[Comment set : "Text"]:
+✬[Comment check]:
+✬[Clock: on]: "Clock name on"
+✬[Clock: off]: "Clock name off"
+✬[Ban]: "Add blacklist"
+✬[Unban]: "Dalate blacklist"
+✬[Banlist]: "Check blacklist"
+✬[Protect: on/off]:"ป้องกัน"
+✬[Block url: on/off]:"ป้องกันลิ้ง"
+✬[Namelock: on/off]:"ป้องกันห้อง"
+✬[Blockinvite:on/off]:"ป้องกันการเชิญ"
 
--☣[Set]:Commands Set. -
-👽[Contact: on/off]: 
-👽[Auto join: on/off]: 
-👽[Cancel Invite: 1 on/off]:
-👽[Auto share: on/off]:
-👽[Auto leave: on/off]: 
-👽[Comment: on/off]: 
-👽[Auto add: on/off]: 
-👽[Auto like: on/off]: 
+-☆☆[Set]:Commands Set]☆☆-
+✬[Contact: on/off]: 
+✬[Auto join: on/off]: 
+✬[Cancel Invite: 1 on/off]:
+✬[Auto share: on/off]:
+✬[Auto leave: on/off]: 
+✬[Comment: on/off]: 
+✬[Auto add: on/off]: 
+✬[Auto like: on/off]: 
 	
--☢ Commands in the groups. ~~~~
-☠[Ban " @Tag]: 
-☠[Unban " @Tag]: 
-☠[Urlon]: "Open urL"
-☠[Urloff]: "Closed urL"
-☠[Url]: " Check urL room"
-☠[Ginfo]: "~÷~ data room"
-☠[Invite: "mid"]: 
-☠[Say: "Text"]: "Kicker talk"
-☠[Cancel]: "Cancel invite"
-☠[Gn: "name"]: "Change name Group"
-☠[NK: "Name"]: ~÷~
-☠[Dead]: "Kick Blacklist"
-   ŋีಖଏדЮ✫নმ௮₷ণજัゆ 
-   By.Nunu :  http://line.me/ti/p/ShgslAPyYS 
+-✵[Commands in the groups]✵-
+✬[Ban " @Tag]: 
+✬[Unban " @Tag]: 
+✬[Urlon]: "Open urL"
+✬[Urloff]: "Closed urL"
+✬[Url]: " Check urL room"
+✬[Ginfo]: "~÷~ data room"
+✬[Invite: "mid"]: 
+✬[Say: "Text"]: "Kicker talk"
+✬[Cancel]: "Cancel invite"
+✬[Gn: "name"]: "Change name Group"
+✬[NK: "Name"]:
+✬[Dead]: "Kick Blacklist"
+   ✬✬http://line.me/ti/p/4bvwOIMft8✬✬
 """
-helpMessage2 ="""-⚠™ -
+helpMessage2 ="""-〠[ป้องกัน]〠-
 
 💀[Protect: on/off]: 
 💀[Block url: on/off]: 
@@ -128,9 +131,9 @@ wait = {
     'leaveRoom':False,
     'timeline':False,
     'autoAdd':False,
-    'message':"Thanks add me 💗Love💗",
+    'message':"Thanks add me✵-http://line.me/ti/p/4bvwOIMft8 ✵",
     "lang":"JP",
-    "comment":"Auto like 💗Love💗  http://line.me/ti/p/ShgslAPyYS  ",
+    "comment":"Auto like✵-http://line.me/ti/p/4bvwOIMft8 ✵",
     "likeOn":False,
     "commentOn":False,
     "commentBlack":{},
@@ -581,9 +584,31 @@ def bot(op):
                     wait["commentOn"] = False
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Already。")          
-            #elif "gurl" == msg.text:
-                #print cl.getGroup(msg.to)
-                ##cl.sendMessage(msg)
+            elif msg.text == "นับ":
+                    cl.sendText(msg.to, "!โปรดรอ..กรุณาพิมพ์ อ่าน")
+                    try:
+                        del wait2['readPoint'][msg.to]
+                        del wait2['readMember'][msg.to]
+                    except:
+                           pass
+                    now2 = datetime.now()
+                    wait2['readPoint'][msg.to] = msg.id
+                    wait2['readMember'][msg.to] = ""
+                    wait2['setTime'][msg.to] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    wait2['ROM'][msg.to] = {}
+                    print wait2
+            elif msg.text == "อ่าน":
+                    if msg.to in wait2['readPoint']:
+                        if wait2["ROM"][msg.to].items() == []:
+                            chiya = ""
+                        else:
+                            chiya = ""
+                            for rom in wait2["ROM"][msg.to].items():
+                                print rom
+                                chiya += rom[1] + "\n"
+                        cl.sendText(msg.to, "╔═══════════════%s\n╠════════════════\n%s╠═══════════════\n║Readig point creation:\n║ [%s]\n╚════════════════"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                    else:
+                        cl.sendText(msg.to, "Ketik Lurking dulu dudul Baru bilang result Point.")
             elif msg.text in ["Block url:on"]:
                 protecturl.append(msg.to)
                 cl.sendText(msg.to,"done")
@@ -865,22 +890,22 @@ def bot(op):
                         cl.sendText(msg.to,"Already。")                        
             elif "Set" == msg.text:
                 md = ""
-                if wait["contact"] == True: md+="▪™[ Contact → on ]\n"       
-                else: md+="▪™[ Contact → off ]\n"      
-                if wait["autoJoin"] == True: md+="▪™[  Auto join → on ]\n" 
-                else: md +="▪™[ Auto join → off ]\n"
-                if wait["autoCancel"]["on"] == True:md+="▪™[ Cancel Invite → " + str(wait["autoCancel"]["members"]) + " ]\n"     
-                else: md+= "▪™[ Cancel Invite → off ]\n"  
-                if wait["leaveRoom"] == True: md+="▪™[ Auto leave → on ]\n"   
-                else: md+="▪™[ Auto leave → off ]\n"
-                if wait["timeline"] == True: md+="▪™[ Auto Share → on ]\n"  
-                else:md+="▪™[ Auto Share → off ]\n" 
-                if wait["commentOn"] == True: md+="▪™[ Comment → on ]\n"   
-                else:md+="▪™[ Comment → off ]\n"    
-                if wait["autoAdd"] == True: md+="▪™[ Auto add → on ]\n"  
-                else:md+="▪™[ Auto add → off ]\n"   
-                if wait["likeOn"] == True: md+="▪™[ Auto like → on ]\n"
-                else:md+="▪™[ Auto like → off ]\n" 
+                if wait["contact"] == True: md+="✔[ Contact → on ]\n"       
+                else: md+="✖[ Contact → off ]\n"      
+                if wait["autoJoin"] == True: md+="✔[  Auto join → on ]\n" 
+                else: md +="✖[ Auto join → off ]\n"
+                if wait["autoCancel"]["on"] == True:md+="✔[ Cancel Invite → " + str(wait["autoCancel"]["members"]) + " ]\n"     
+                else: md+= "✖[ Cancel Invite → off ]\n"  
+                if wait["leaveRoom"] == True: md+="✔[ Auto leave → on ]\n"   
+                else: md+="✖[ Auto leave → off ]\n"
+                if wait["timeline"] == True: md+="✔[ Auto Share → on ]\n"  
+                else:md+="✖[ Auto Share → off ]\n" 
+                if wait["commentOn"] == True: md+="✔[ Comment → on ]\n"   
+                else:md+="✖[ Comment → off ]\n"    
+                if wait["autoAdd"] == True: md+="✔[ Auto add → on ]\n"  
+                else:md+="✖[ Auto add → off ]\n"   
+                if wait["likeOn"] == True: md+="✔[ Auto like → on ]\n"
+                else:md+="✖[ Auto like → off ]\n" 
                 cl.sendText(msg.to,md)
             elif msg.text in ["Group id","group id"]:
                 gid = cl.getGroupIdsJoined()
@@ -1372,7 +1397,23 @@ def bot(op):
 		for i in gid:
 		    cl.sendText(i,"=======[BROADCAST]=======\n\n"+bc+"\n\nContact Me : line.me/ti/p/~@xpk5386g")
 		cl.sendText(msg.to,"Success BC BosQ")
-          
+            elif "Add all" in msg.text:
+		thisgroup = cl.getGroups([msg.to])
+		Mids = [contact.mid for contact in thisgroup[0].members]
+		mi_d = Mids[:33]
+		cl.findAndAddContactsByMids(mi_d)
+		cl.sendText(msg.to,"Success Add all")
+#--------------------------------------------------------
+	    elif "Recover" in msg.text:
+		thisgroup = cl.getGroups([msg.to])
+		Mids = [contact.mid for contact in thisgroup[0].members]
+		mi_d = Mids[:33]
+		cl.createGroup("Recover", mi_d)
+		cl.sendText(msg.to,"Success recover")
+#--------------------------------------------------------
+	    elif msg.text in ["Remove all chat"]:
+		cl.removeAllMessages(op.param2)
+		cl.sendText(msg.to,"Removed all chat")
 		    
 #-----------------------------------------------------------speed
             elif msg.text in ["Ban"]:
